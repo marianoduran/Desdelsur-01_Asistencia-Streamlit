@@ -28,14 +28,12 @@
 # ===============================================================================
 
 
+# app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
 import io
 from datetime import datetime
-from PIL import Image
-from lib.common import LOGO_URL, header
-
 
 # ===============================
 # Funciones (adaptadas de v08)
@@ -310,40 +308,18 @@ def build_outputs(calendar_df: pd.DataFrame, reloj_df: pd.DataFrame, min_gap_sec
 # ===============================
 # UI Streamlit
 # ===============================
-st.set_page_config(
-    page_title="Procesador de Asistencia Zarate",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
-# Oculta la navegación nativa de Streamlit en la sidebar
-st.markdown("""
-<style>
-/* Sidebar native nav */
-section[data-testid="stSidebarNav"] { display: none !important; }
-div[data-testid="stSidebarNav"]     { display: none !important; } /* fallback */
-</style>
-""", unsafe_allow_html=True)
-
-st.sidebar.image(LOGO_URL, width=70)
-st.sidebar.page_link("TeamIT_Procesador_Asistencia_Streamlit_v08.py",
-                     label="01 - Procesador de Asistencia Zarate")
-st.sidebar.page_link("pages/02_a_definir.py",
-                     label="02 - A definir")
-
-
-# Page content
-header(st, "Procesador de Asistencia Zarate")
+st.set_page_config(page_title="Procesador de Asistencia v08", layout="wide")
+st.title("Procesador de Asistencia Zarate – Streamlit")
 
 st.markdown("""
 Subí el **Calendario** (CSV con columnas *Fecha, Horas, DiaSemana*) y el/los **Reloj** (CSV con columnas como *Fecha, Usuarios, Evento*, etc.).  
-Elegí el **mínimo de segundos** para consolidar ingresos/egresos muy próximas (por defecto 30).  
+Elegí el **mínimo de segundos** para consolidar marcas muy próximas (por defecto 30).  
 Luego descargá el Excel generado.
 """)
 
 col1, col2 = st.columns(2)
 with col1:
-    min_gap_seconds = st.number_input("Segundos mínimos entre ingresos/egresos (para no colapsarlas)", min_value=0, value=30, step=1)
+    min_gap_seconds = st.number_input("Segundos mínimos entre marcas (para no colapsarlas)", min_value=0, value=30, step=1)
 with col2:
     st.write("")  # spacer
 
