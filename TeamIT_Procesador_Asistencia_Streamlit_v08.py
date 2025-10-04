@@ -314,7 +314,7 @@ def build_outputs(calendar_df: pd.DataFrame, reloj_df: pd.DataFrame, min_gap_sec
 # ===============================
 st.set_page_config(
     page_title="Procesador de Asistencia Zarate",
-    page_icon="🫘"
+    page_icon="🫘",
     layout="wide",
     initial_sidebar_state="expanded",
 )
