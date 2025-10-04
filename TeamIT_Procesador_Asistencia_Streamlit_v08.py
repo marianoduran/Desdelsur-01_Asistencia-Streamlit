@@ -23,8 +23,10 @@
 #
 #
 #  Change control history:
-#   - 03-09-2025:  Mariano Duran - v0.08 
+#   - 01-10-2025:  Mariano Duran - v0.08 
 #       - Initial creation of script. Alineado con la versión stand alone
+#   - 03-10-2025:  Mariano Duran - v0.08 
+#       - Agregado de logo, sidebar, page 02 TBD para futuras mejoras
 # ===============================================================================
 
 
@@ -342,6 +344,14 @@ Subí el **Calendario** (CSV con columnas *Fecha, Horas, DiaSemana*) y el/los **
 Elegí el **mínimo de segundos** para consolidar ingresos/egresos muy próximas (por defecto 30).  
 Luego descargá el Excel generado.
 """)
+
+st.markdown("""
+<style>
+/* Ajusta el ancho del number_input a ~180px */
+div[data-testid="stNumberInput"] {width: 180px;}
+div[data-testid="stNumberInput"] > div {width: 180px;}
+</style>
+""", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 with col1:
