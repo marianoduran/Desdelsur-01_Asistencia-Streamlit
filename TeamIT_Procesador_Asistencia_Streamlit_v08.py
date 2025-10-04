@@ -26,7 +26,7 @@
 #   - 01-10-2025:  Mariano Duran - v0.08 
 #       - Initial creation of script. Alineado con la versión stand alone
 #   - 03-10-2025:  Mariano Duran - v0.08 
-#       - Agregado de logo, sidebar, page 02 TBD para futuras mejoras
+#       - Agregado de logo, icono, sidebar, page 02 TBD para futuras mejoras
 # ===============================================================================
 
 
@@ -314,6 +314,7 @@ def build_outputs(calendar_df: pd.DataFrame, reloj_df: pd.DataFrame, min_gap_sec
 # ===============================
 st.set_page_config(
     page_title="Procesador de Asistencia Zarate",
+    page_icon="🫘"
     layout="wide",
     initial_sidebar_state="expanded",
 )
