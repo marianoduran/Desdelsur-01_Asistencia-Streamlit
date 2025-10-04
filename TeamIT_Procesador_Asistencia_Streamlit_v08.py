@@ -355,7 +355,7 @@ div[data-testid="stNumberInput"] > div {width: 180px;}
 
 col1, col2 = st.columns(2)
 with col1:
-    min_gap_seconds = st.number_input("Segundos mínimos entre ingresos/egresos (para no colapsarlas)", min_value=0, value=30, step=1)
+    min_gap_seconds = st.number_input("Segundos mínimos entre ingresos/egresos (para descartar falsos ingresos/egresos)", min_value=0, value=30, step=1)
 with col2:
     st.write("")  # spacer
 
